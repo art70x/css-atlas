@@ -65,4 +65,4 @@ A list of potential enhancements for the CSS Reference Guide.
 
 ---
 
-*This is a living document. Feel free to suggest additions via issues or pull requests!*
+_This is a living document. Feel free to suggest additions via issues or pull requests!_
