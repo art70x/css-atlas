@@ -1,10 +1,11 @@
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo, useEffect } from 'react'
 
 interface UseLazyLoadOptions<T> {
-  items: T[];
-  initialCount?: number;
-  incrementCount?: number;
-  threshold?: number;
+  items: T[]
+  initialCount?: number
+  incrementCount?: number
+  threshold?: number
+  delayMs?: number
 }
 
 export const useLazyLoad = <T>({
@@ -12,50 +13,46 @@ export const useLazyLoad = <T>({
   initialCount = 12,
   incrementCount = 12,
   threshold = 200,
+  delayMs = 150,
 }: UseLazyLoadOptions<T>) => {
-  const [displayCount, setDisplayCount] = useState(initialCount);
-  const [isLoading, setIsLoading] = useState(false);
+  const [displayCount, setDisplayCount] = useState(initialCount)
+  const [isLoading, setIsLoading] = useState(false)
 
-  // Reset display count when items change (e.g., filter/search)
-  useEffect(() => {
-    setDisplayCount(initialCount);
-  }, [items.length, initialCount]);
+  const displayedItems = useMemo(() => items.slice(0, displayCount), [items, displayCount])
 
-  const displayedItems = useMemo(() => {
-    return items.slice(0, displayCount);
-  }, [items, displayCount]);
-
-  const hasMore = displayCount < items.length;
-  const remainingCount = items.length - displayCount;
+  const hasMore = displayCount < items.length
+  const remainingCount = items.length - displayCount
 
   const loadMore = useCallback(() => {
-    if (isLoading || !hasMore) return;
-    
-    setIsLoading(true);
-    // Small delay for smooth transition
-    setTimeout(() => {
-      setDisplayCount((prev) => Math.min(prev + incrementCount, items.length));
-      setIsLoading(false);
-    }, 150);
-  }, [hasMore, incrementCount, items.length, isLoading]);
+    if (isLoading || !hasMore) return
+    setIsLoading(true)
+  }, [isLoading, hasMore])
 
-  // Auto-load on scroll near bottom
+  useEffect(() => {
+    if (!isLoading) return
+
+    const id = setTimeout(() => {
+      setDisplayCount((prev) => Math.min(prev + incrementCount, items.length))
+      setIsLoading(false)
+    }, delayMs)
+
+    return () => clearTimeout(id)
+  }, [isLoading, incrementCount, items.length, delayMs])
+
   useEffect(() => {
     const handleScroll = () => {
-      if (isLoading || !hasMore) return;
+      if (isLoading || !hasMore) return
 
-      const scrollHeight = document.documentElement.scrollHeight;
-      const scrollTop = document.documentElement.scrollTop;
-      const clientHeight = document.documentElement.clientHeight;
+      const { scrollTop, scrollHeight, clientHeight } = document.documentElement
 
       if (scrollHeight - scrollTop - clientHeight < threshold) {
-        loadMore();
+        loadMore()
       }
-    };
+    }
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [loadMore, threshold, isLoading, hasMore]);
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [loadMore, threshold, isLoading, hasMore])
 
   return {
     displayedItems,
@@ -63,5 +60,5 @@ export const useLazyLoad = <T>({
     remainingCount,
     loadMore,
     isLoading,
-  };
-};
+  }
+}
