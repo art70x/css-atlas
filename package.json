@@ -12,6 +12,7 @@
     "predev": "nr lint && nr format && cls"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.6.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.562.0",
     "prismjs": "^1.30.0",
