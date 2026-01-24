@@ -1,21 +1,41 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
-import { componentTagger } from "lovable-tagger";
+import { defineConfig } from 'vite'
+import { fileURLToPath, URL } from 'node:url'
 
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
+import react from '@vitejs/plugin-react'
+import { fontless } from 'fontless'
+import tailwindcss from '@tailwindcss/vite'
+
+// https://vite.dev/config/
+export default defineConfig({
   server: {
-    host: "::",
-    port: 8080,
-    hmr: {
-      overlay: false,
-    },
+    port: 3000,
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+
+  plugins: [
+    react(),
+    tailwindcss(),
+    fontless({
+      defaults: {
+        preload: true,
+        weights: [400, 500, 600, 700, 800],
+        styles: ['normal', 'italic'],
+        fallbacks: {
+          'sans-serif': ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Arial'],
+          monospace: ['JetBrains Mono', 'Fira Code', 'Source Code Pro', 'Menlo', 'Consolas'],
+        },
+      },
+      assets: {
+        prefix: '/_fonts',
+      },
+    }),
+  ],
+
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-}));
+})
+
+
+// create-vite@8.2.0
