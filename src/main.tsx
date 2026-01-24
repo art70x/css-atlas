@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import '@/assets/main.css'
 import Index from '@/pages/Index'
 import NotFound from '@/pages/NotFound'
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from '@vercel/analytics/react'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
