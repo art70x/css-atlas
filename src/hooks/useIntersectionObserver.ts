@@ -1,48 +1,48 @@
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback } from 'react'
 
 interface UseIntersectionObserverOptions {
-  threshold?: number;
-  rootMargin?: string;
-  freezeOnceVisible?: boolean;
+  threshold?: number
+  rootMargin?: string
+  freezeOnceVisible?: boolean
 }
 
 export const useIntersectionObserver = ({
   threshold = 0.1,
-  rootMargin = "100px",
+  rootMargin = '100px',
   freezeOnceVisible = true,
 }: UseIntersectionObserverOptions = {}) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const elementRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false)
+  const [hasAnimated, setHasAnimated] = useState(false)
+  const elementRef = useRef<HTMLDivElement>(null)
 
   const callback = useCallback(
     (entries: IntersectionObserverEntry[]) => {
-      const [entry] = entries;
+      const [entry] = entries
       if (entry.isIntersecting) {
-        setIsVisible(true);
+        setIsVisible(true)
         if (freezeOnceVisible) {
-          setHasAnimated(true);
+          setHasAnimated(true)
         }
       } else if (!freezeOnceVisible) {
-        setIsVisible(false);
+        setIsVisible(false)
       }
     },
-    [freezeOnceVisible]
-  );
+    [freezeOnceVisible],
+  )
 
   useEffect(() => {
-    const element = elementRef.current;
-    if (!element || (freezeOnceVisible && hasAnimated)) return;
+    const element = elementRef.current
+    if (!element || (freezeOnceVisible && hasAnimated)) return
 
     const observer = new IntersectionObserver(callback, {
       threshold,
       rootMargin,
-    });
+    })
 
-    observer.observe(element);
+    observer.observe(element)
 
-    return () => observer.disconnect();
-  }, [callback, threshold, rootMargin, freezeOnceVisible, hasAnimated]);
+    return () => observer.disconnect()
+  }, [callback, threshold, rootMargin, freezeOnceVisible, hasAnimated])
 
-  return { elementRef, isVisible: isVisible || hasAnimated };
-};
+  return { elementRef, isVisible: isVisible || hasAnimated }
+}

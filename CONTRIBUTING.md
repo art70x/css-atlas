@@ -27,17 +27,20 @@ By participating in this project, you agree to maintain a welcoming and inclusiv
 1. **Fork the repository** on GitHub
 
 2. **Clone your fork**:
+
    ```bash
    git clone https://github.com/YOUR_USERNAME/css-reference-guide.git
    cd css-reference-guide
    ```
 
 3. **Install dependencies**:
+
    ```bash
    npm install
    ```
 
 4. **Start the development server**:
+
    ```bash
    npm run dev
    ```
@@ -211,12 +214,8 @@ Use existing categories when possible:
 - Use `cn()` utility for conditional classes
 
 ```tsx
-import { cn } from "@/lib/utils";
-
-<div className={cn(
-  "base-classes",
-  condition && "conditional-classes"
-)} />
+import { cn } from '@/lib/utils'
+;<div className={cn('base-classes', condition && 'conditional-classes')} />
 ```
 
 ### File Naming
@@ -259,12 +258,14 @@ perf(cards): implement virtual scrolling for large lists
 ## 🔄 Pull Request Process
 
 1. **Update your branch** with the latest main:
+
    ```bash
    git fetch origin
    git rebase origin/main
    ```
 
 2. **Run checks** before submitting:
+
    ```bash
    npm run lint
    npm run build

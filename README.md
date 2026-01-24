@@ -1,11 +1,11 @@
-# CSS Reference Guide
+# CSS Atlas
 
 A modern, comprehensive reference tool for CSS properties and functions. Built with React, TypeScript, and Tailwind CSS.
 
-![CSS Reference Guide](https://img.shields.io/badge/CSS-Reference-667eea?style=for-the-badge&logo=css3&logoColor=white)
-![React](https://img.shields.io/badge/React-18.3-61dafb?style=for-the-badge&logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178c6?style=for-the-badge&logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![CSS Atlas](https://img.shields.io/badge/CSS-Atlas-667eea?style=for-the-badge&logo=css3&logoColor=white)
+![React](https://img.shields.io/badge/React-19.2-61dafb?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white)
 
 ## ✨ Features
 
@@ -22,17 +22,17 @@ A modern, comprehensive reference tool for CSS properties and functions. Built w
 
 ### Prerequisites
 
-- Node.js 18+ 
-- npm, yarn, or bun
+- Node.js 20+
+- npm, pnpm, or bun
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/css-reference-guide.git
+git clone https://github.com/art70x/css-atlas.git
 
 # Navigate to the project
-cd css-reference-guide
+cd css-atlas
 
 # Install dependencies
 npm install
@@ -57,13 +57,16 @@ npm run preview
 
 ```
 src/
+|── assets/
+|   ├── main.css            # Global styles & design tokens
+|   └── syntax.css            # Prismjs theme
 ├── components/
-│   ├── ui/              # shadcn/ui components
 │   ├── CategoryFilter.tsx
 │   ├── Header.tsx
 │   ├── LazyPropertyCard.tsx
 │   ├── LoadMoreButton.tsx
 │   ├── SearchBar.tsx
+│   └── skeleton.tsx
 │   └── SyntaxHighlight.tsx
 ├── data/
 │   └── cssProperties.ts # All CSS property definitions
@@ -75,8 +78,6 @@ src/
 │   └── NotFound.tsx
 ├── lib/
 │   └── utils.ts
-├── index.css            # Global styles & design tokens
-├── App.tsx
 └── main.tsx
 ```
 
@@ -119,11 +120,11 @@ Properties are defined in `src/data/cssProperties.ts`:
 
 ## 🛠️ Tech Stack
 
-- **Framework**: [React 18](https://react.dev/)
-- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Framework**: [React](https://react.dev/)
+- **Build Tool**: [Rolldown Vite](https://vitejs.dev/)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+- **Code Highlighting**: [Prismjs](https://prismjs.com/)
 - **Routing**: [React Router](https://reactrouter.com/)
 - **Icons**: [Lucide React](https://lucide.dev/)
 
@@ -138,17 +139,18 @@ The application is optimized for performance:
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+We welcome contributions! Please see [CONTRIBUTING.md](https://github.com/art70x/css-atlas/blob/main/CONTRIBUTING.md) for guidelines.
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the [MIT License](https://github.com/art70x/css-atlas/blob/main/LICENSE).
 
 ## 🙏 Acknowledgments
 
 - [MDN Web Docs](https://developer.mozilla.org/) - CSS documentation reference
 - [Can I Use](https://caniuse.com/) - Browser support data
 - [shadcn/ui](https://ui.shadcn.com/) - Beautiful UI components
+- [Lovable](https://lovable.dev/) - Initial Prototype
 
 ---
 
