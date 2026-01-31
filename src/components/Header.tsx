@@ -16,7 +16,7 @@ const Header = () => {
       </div>
       <p className="mx-auto max-w-xl text-lg leading-relaxed text-muted-foreground">
         Your comprehensive guide to{' '}
-        <strong className="text-foreground/80">160+ CSS properties</strong>. Search, explore, and
+        <strong className="text-foreground/80">180+ CSS properties</strong>. Search, explore, and
         master the syntax.
       </p>
       <div className="mt-4 flex items-center justify-center gap-4 text-xs text-muted-foreground/60">
