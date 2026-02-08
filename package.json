@@ -8,10 +8,11 @@
     "build": "vite build",
     "prebuild": "nr type-check",
     "preview": "vite preview",
-    "type-check": "tsc -b --incremental --tsBuildInfoFile .tsbuildinfo",
-    "lint": "eslint . --fix --cache --cache-location .eslintcache",
+    "type-check": "tsc -b",
+    "lint": "eslint . --cache --cache-location .eslintcache",
+    "lint:fix": "eslint . --fix --cache --cache-location .eslintcache",
     "format": "prettier --write --experimental-cli src/",
-    "predev": "nr lint && nr format && cls"
+    "predev": "nr lint:fix && nr format && cls"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",

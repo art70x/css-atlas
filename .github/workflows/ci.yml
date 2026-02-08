@@ -19,7 +19,7 @@ concurrency:
 jobs:
   types:
     name: 💪 Type check
-    runs-on: -latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v6
