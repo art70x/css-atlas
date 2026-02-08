@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "build": "vite build",
+    "prebuild": "nr type-check",
     "preview": "vite preview",
+    "type-check": "tsc --noEmit --incremental --tsBuildInfoFile .tsbuildinfo",
+    "lint": "eslint . --fix --cache --cache-location .eslintcache",
     "format": "prettier --write --experimental-cli src/",
     "predev": "nr lint && nr format && cls"
   },
