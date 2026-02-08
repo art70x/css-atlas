@@ -13,21 +13,24 @@ export default defineConfig({
 
   plugins: [
     react(),
-    tailwindcss(),
     fontless({
-      defaults: {
-        preload: true,
-        weights: [400, 500, 600, 700, 800],
-        styles: ['normal', 'italic'],
-        fallbacks: {
-          'sans-serif': ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Arial'],
-          monospace: ['JetBrains Mono', 'Fira Code', 'Source Code Pro', 'Menlo', 'Consolas'],
+      priority: ['google'],
+      families: [
+        {
+          name: 'Inter',
+          weights: [400, 500, 600, 700, 800],
+          fallbacks: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Arial'],
+          global: true,
         },
-      },
-      assets: {
-        prefix: '/_fonts',
-      },
+        {
+          name: 'IBM Plex Mono',
+          fallbacks: ['JetBrains Mono', 'Fira Code', 'Source Code Pro', 'Menlo', 'Consolas'],
+          weights: [400, 500],
+          global: true,
+        },
+      ],
     }),
+    tailwindcss(),
   ],
 
   resolve: {
