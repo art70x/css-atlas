@@ -149,7 +149,7 @@ This project is open source and available under the [MIT License](https://github
 
 - [MDN Web Docs](https://developer.mozilla.org/) - CSS documentation reference
 - [Can I Use](https://caniuse.com/) - Browser support data
-- [shadcn/ui](https://ui.shadcn.com/) - Beautiful UI components
+- [Nuxpert](https://github.com/MFM-347/nuxpert) - Inspiration for project structure, CI, Prettier, VS Code, and Vite configurations
 - [Lovable](https://lovable.dev/) - Initial Prototype
 
 ---
