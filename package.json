@@ -8,7 +8,7 @@
     "build": "vite build",
     "prebuild": "nr type-check",
     "preview": "vite preview",
-    "type-check": "tsc --noEmit --incremental --tsBuildInfoFile .tsbuildinfo",
+    "type-check": "tsc -b --incremental --tsBuildInfoFile .tsbuildinfo",
     "lint": "eslint . --fix --cache --cache-location .eslintcache",
     "format": "prettier --write --experimental-cli src/",
     "predev": "nr lint && nr format && cls"
@@ -53,5 +53,5 @@
       "vite": "npm:rolldown-vite@latest"
     }
   },
-  "packageManager": "pnpm@10.28.1"
+  "packageManager": "pnpm@10.28.2"
 }
