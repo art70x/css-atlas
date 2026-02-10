@@ -60,5 +60,3 @@ export default defineConfig({
     },
   },
 })
-
-// create-vite@8.2.0

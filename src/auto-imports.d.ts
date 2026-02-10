@@ -12,10 +12,10 @@ declare global {
   const Suspense: typeof import('react').Suspense
   const cache: typeof import('react').cache
   const cacheSignal: typeof import('react').cacheSignal
-  const categories: typeof import('./data/cssProperties').categories
+  const categories: typeof import('./data/css-properties').categories
   const createContext: typeof import('react').createContext
   const createRef: typeof import('react').createRef
-  const cssProperties: typeof import('./data/cssProperties').cssProperties
+  const cssProperties: typeof import('./data/css-properties').cssProperties
   const forwardRef: typeof import('react').forwardRef
   const lazy: typeof import('react').lazy
   const memo: typeof import('react').memo
@@ -33,9 +33,9 @@ declare global {
   const useImperativeHandle: typeof import('react').useImperativeHandle
   const useInRouterContext: typeof import('react-router').useInRouterContext
   const useInsertionEffect: typeof import('react').useInsertionEffect
-  const useIntersectionObserver: typeof import('./hooks/useIntersectionObserver').useIntersectionObserver
+  const useIntersectionObserver: typeof import('./hooks/use-intersection-observer').useIntersectionObserver
   const useLayoutEffect: typeof import('react').useLayoutEffect
-  const useLazyLoad: typeof import('./hooks/useLazyLoad').useLazyLoad
+  const useLazyLoad: typeof import('./hooks/use-lazy-load').useLazyLoad
   const useLocation: typeof import('react-router').useLocation
   const useMemo: typeof import('react').useMemo
   const useNavigate: typeof import('react-router').useNavigate
@@ -55,6 +55,6 @@ declare global {
 // for type re-export
 declare global {
   // @ts-ignore
-  export type { CSSProperty, Category } from './data/cssProperties'
-  import('./data/cssProperties')
+  export type { CSSProperty, Category } from './data/css-properties'
+  import('./data/css-properties')
 }
