@@ -49,7 +49,7 @@ const LazyPropertyCard = memo(({ property, index }: LazyPropertyCardProps) => {
           </header>
 
           {/* Description */}
-          <p className="mb-5 text-sm leading-relaxed text-muted-foreground" itemProp="description">
+          <p className="mb-5 text-sm/relaxed text-muted-foreground" itemProp="description">
             {property.description}
           </p>
 
@@ -57,7 +57,7 @@ const LazyPropertyCard = memo(({ property, index }: LazyPropertyCardProps) => {
             {/* Syntax */}
             <section>
               <div className="mb-2 flex items-center gap-2 text-xs font-medium tracking-wider text-muted-foreground uppercase">
-                <BookOpen className="h-3.5 w-3.5" />
+                <BookOpen className="size-3.5" />
                 <span>Syntax</span>
               </div>
               <SyntaxHighlight code={property.syntax} />
@@ -67,14 +67,14 @@ const LazyPropertyCard = memo(({ property, index }: LazyPropertyCardProps) => {
             {property.values.length > 0 && (
               <section>
                 <div className="mb-2 flex items-center gap-2 text-xs font-medium tracking-wider text-muted-foreground uppercase">
-                  <Layers className="h-3.5 w-3.5" />
+                  <Layers className="size-3.5" />
                   <span>Values</span>
                 </div>
                 <div className="flex flex-wrap gap-1.5">
                   {property.values.map((value: string, i: number) => (
                     <span
                       key={i}
-                      className="inline-flex cursor-default items-center rounded border border-border/30 bg-muted px-2 py-0.5 font-mono text-sm text-value transition-all duration-100 hover:scale-105 hover:border-primary/50"
+                      className="inline-flex cursor-default items-center rounded-sm border border-border/30 bg-muted px-2 py-0.5 font-mono text-sm text-value transition-all duration-100 hover:scale-105 hover:border-primary/50"
                     >
                       {value}
                     </span>
@@ -93,7 +93,7 @@ const LazyPropertyCard = memo(({ property, index }: LazyPropertyCardProps) => {
                   {property.units.map((unit: string, i: number) => (
                     <span
                       key={i}
-                      className="inline-flex cursor-default items-center rounded border border-border/30 bg-muted px-2 py-0.5 font-mono text-sm text-unit transition-all hover:scale-105 hover:border-accent/50"
+                      className="inline-flex cursor-default items-center rounded-sm border border-border/30 bg-muted px-2 py-0.5 font-mono text-sm text-unit transition-all hover:scale-105 hover:border-accent/50"
                     >
                       {unit}
                     </span>
@@ -113,12 +113,12 @@ const LazyPropertyCard = memo(({ property, index }: LazyPropertyCardProps) => {
                 >
                   {copied ? (
                     <>
-                      <Check className="h-3 w-3 text-green-400" />
+                      <Check className="size-3 text-green-400" />
                       <span className="text-green-400">Copied!</span>
                     </>
                   ) : (
                     <>
-                      <Copy className="h-3 w-3" />
+                      <Copy className="size-3" />
                       <span>Copy</span>
                     </>
                   )}
@@ -145,7 +145,7 @@ const LazyPropertyCard = memo(({ property, index }: LazyPropertyCardProps) => {
               <Skeleton className="h-6 w-32" />
               <Skeleton className="h-5 w-20" />
             </div>
-            <Skeleton className="h-5 w-5 rounded" />
+            <Skeleton className="h-5 w-5 rounded-sm" />
           </div>
           <Skeleton className="h-12 w-full" />
           <Skeleton className="h-8 w-full" />

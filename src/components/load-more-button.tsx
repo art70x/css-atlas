@@ -16,7 +16,7 @@ const LoadMoreButton = ({ onClick, remainingCount, isLoading }: LoadMoreButtonPr
       >
         {isLoading ? (
           <>
-            <Loader2 className="h-4 w-4 animate-spin" />
+            <Loader2 className="size-4 animate-spin" />
             <span>Loading...</span>
           </>
         ) : (

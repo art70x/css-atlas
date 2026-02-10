@@ -4,7 +4,7 @@ const Header = () => {
       <div className="group mb-4 inline-flex cursor-default items-center gap-3">
         <div className="rounded-2xl border border-primary/20 bg-primary/10 p-3 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 group-hover:border-primary/30 group-hover:bg-primary/15">
           <ILucideCompass
-            className="h-8 w-8 text-primary transition-transform duration-300 group-hover:rotate-180"
+            className="size-8 text-primary transition-transform duration-300 group-hover:rotate-180"
             aria-hidden="true"
           />
         </div>
@@ -12,7 +12,7 @@ const Header = () => {
           CSS <span className="text-gradient">Atlas</span>
         </h1>
       </div>
-      <p className="mx-auto max-w-xl text-lg leading-relaxed text-muted-foreground">
+      <p className="mx-auto max-w-xl text-lg/relaxed text-muted-foreground">
         Your comprehensive guide to{' '}
         <strong className="text-foreground/80">180+ CSS properties</strong>. Search, explore, and
         master the syntax.
