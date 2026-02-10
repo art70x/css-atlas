@@ -49,6 +49,8 @@
   --font-sans: 'Inter', sans-serif;
   --font-mono: 'IBM Plex Mono', sans-serif;
 
+  --color-pattern-fg: var(--pattern-fg);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -157,12 +159,15 @@
   }
 }
 
+/* Theme in progress */
 :root {
   --radius: 0.75rem;
   --h1: 230;
   --h2: 250;
   --h3: 261;
   --h4: 300;
+
+  --pattern-fg: color-mix(in oklab, var(--color-black) 5%, transparent);
 
   --background: var(--color-white);
   --foreground: var(--color-gray-950);
@@ -188,6 +193,8 @@
 }
 
 .dark {
+  --pattern-fg: color-mix(in oklab, var(--color-white) 10%, transparent);
+
   --background: var(--color-gray-950);
   --foreground: var(--color-gray-50);
 

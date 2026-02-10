@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router'
-import Index from '@/pages/Index'
-import NotFound from '@/pages/NotFound'
+import Index from '@/pages'
+import NotFound from '@/pages/not-found'
 import { Analytics } from '@vercel/analytics/react'
 
 export default function App() {

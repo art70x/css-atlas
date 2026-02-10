@@ -16,7 +16,7 @@ export default {
   attributeGroups: ['^className$', '$DEFAULT', '^title$', '^aria-', '^data-'],
   cssDeclarationSorterOrder: 'frakto',
   cssDeclarationSorterKeepOverrides: false,
-  tailwindStylesheet: './src/assets/main.css',
+  tailwindStylesheet: './src/main.css',
   tailwindPreserveWhitespace: true,
   tailwindPreserveDuplicates: true,
 }

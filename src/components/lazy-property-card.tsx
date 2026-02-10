@@ -71,7 +71,7 @@ const LazyPropertyCard = memo(({ property, index }: LazyPropertyCardProps) => {
                   <span>Values</span>
                 </div>
                 <div className="flex flex-wrap gap-1.5">
-                  {property.values.map((value, i) => (
+                  {property.values.map((value: string, i: number) => (
                     <span
                       key={i}
                       className="inline-flex cursor-default items-center rounded border border-border/30 bg-muted px-2 py-0.5 font-mono text-sm text-value transition-all duration-100 hover:scale-105 hover:border-primary/50"
@@ -90,7 +90,7 @@ const LazyPropertyCard = memo(({ property, index }: LazyPropertyCardProps) => {
                   Units
                 </div>
                 <div className="flex flex-wrap gap-1.5">
-                  {property.units.map((unit, i) => (
+                  {property.units.map((unit: string, i: number) => (
                     <span
                       key={i}
                       className="inline-flex cursor-default items-center rounded border border-border/30 bg-muted px-2 py-0.5 font-mono text-sm text-unit transition-all hover:scale-105 hover:border-accent/50"

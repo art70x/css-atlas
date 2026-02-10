@@ -14,7 +14,7 @@ const Index = () => {
       const matchesSearch =
         property.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         property.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        property.values.some((v) => v.toLowerCase().includes(searchQuery.toLowerCase()))
+        property.values.some((v: string) => v.toLowerCase().includes(searchQuery.toLowerCase()))
 
       const matchesCategory = selectedCategory === 'all' || property.category === selectedCategory
 
