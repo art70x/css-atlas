@@ -25,7 +25,6 @@ const SearchBar = ({
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
           className="w-full rounded-xl border border-border/50 bg-muted/50 px-5 py-4 pr-12 pl-14 text-lg backdrop-blur-sm transition-all transition-all duration-200 duration-300 placeholder:text-muted-foreground focus:border-primary/50 focus:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.3)] focus:ring-2 focus:ring-primary/20 focus:outline-none"
-          autoFocus
           aria-label="Search CSS properties"
           autoComplete="off"
           autoCorrect="off"

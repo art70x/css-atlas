@@ -1,11 +1,8 @@
-import { useState, useMemo } from 'react'
-import Header from '@/components/header'
-import SearchBar from '@/components/search-bar'
-import CategoryFilter from '@/components/category-filter'
-import LazyPropertyCard from '@/components/lazy-property-card'
-import LoadMoreButton from '@/components/load-more-button'
-import { cssProperties, type Category, type CSSProperty } from '@/data/cssProperties'
-import { useLazyLoad } from '@/hooks/use-lazy-load'
+import Header from 'components/header'
+import SearchBar from 'components/search-bar'
+import CategoryFilter from 'components/category-filter'
+import LazyPropertyCard from 'components/lazy-property-card'
+import LoadMoreButton from 'components/load-more-button'
 import { BookOpen, Sparkles } from 'lucide-react'
 
 const Index = () => {

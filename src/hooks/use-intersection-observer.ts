@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState, useCallback } from 'react'
-
 interface UseIntersectionObserverOptions {
   threshold?: number
   rootMargin?: string

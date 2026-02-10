@@ -1,22 +1,23 @@
-import { useEffect } from 'react'
-import Prism from 'prismjs'
-import '@/assets/syntax.css'
-import 'prismjs/components/prism-css'
+import { createHighlighterCore } from 'shiki/core'
+import { createOnigurumaEngine } from 'shiki/engine/oniguruma'
 
-interface SyntaxHighlightProps {
+type Props = {
   code: string
 }
 
-const SyntaxHighlight = ({ code }: SyntaxHighlightProps) => {
-  useEffect(() => {
-    Prism.highlightAll()
-  }, [code])
+const highlighter = await createHighlighterCore({
+  themes: [import('@shikijs/themes/ayu-dark')],
+  langs: [import('@shikijs/langs/css')],
+  engine: createOnigurumaEngine(import('shiki/wasm')),
+})
 
-  return (
-    <pre className="language-css">
-      <code className="language-css">{code}</code>
-    </pre>
-  )
+const SyntaxHighlight = ({ code }: Props) => {
+  const html = highlighter.codeToHtml(code, {
+    lang: 'css',
+    theme: 'ayu-dark',
+  })
+
+  return <div dangerouslySetInnerHTML={{ __html: html }} />
 }
 
 export default SyntaxHighlight

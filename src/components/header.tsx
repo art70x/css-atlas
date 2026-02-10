@@ -1,11 +1,9 @@
-import { Compass } from 'lucide-react'
-
 const Header = () => {
   return (
     <header className="mb-12 animate-fade-in text-center">
       <div className="group mb-4 inline-flex cursor-default items-center gap-3">
         <div className="rounded-2xl border border-primary/20 bg-primary/10 p-3 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 group-hover:border-primary/30 group-hover:bg-primary/15">
-          <Compass
+          <ILucideCompass
             className="h-8 w-8 text-primary transition-transform duration-300 group-hover:rotate-180"
             aria-hidden="true"
           />

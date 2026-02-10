@@ -1,5 +1,3 @@
-import { categories, type Category } from '@/data/cssProperties'
-
 interface CategoryFilterProps {
   selected: Category | 'all'
   onSelect: (category: Category | 'all') => void

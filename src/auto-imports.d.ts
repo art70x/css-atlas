@@ -8,6 +8,7 @@ export {}
 declare global {
   const Activity: typeof import('react').Activity
   const Fragment: typeof import('react').Fragment
+  const ILucideCompass: typeof import('~icons/lucide/compass.jsx').default
   const Suspense: typeof import('react').Suspense
   const cache: typeof import('react').cache
   const cacheSignal: typeof import('react').cacheSignal
@@ -32,9 +33,9 @@ declare global {
   const useImperativeHandle: typeof import('react').useImperativeHandle
   const useInRouterContext: typeof import('react-router').useInRouterContext
   const useInsertionEffect: typeof import('react').useInsertionEffect
-  const useIntersectionObserver: typeof import('./hooks/use-intersection-observer').useIntersectionObserver
+  const useIntersectionObserver: typeof import('./hooks/useIntersectionObserver').useIntersectionObserver
   const useLayoutEffect: typeof import('react').useLayoutEffect
-  const useLazyLoad: typeof import('./hooks/use-lazy-load').useLazyLoad
+  const useLazyLoad: typeof import('./hooks/useLazyLoad').useLazyLoad
   const useLocation: typeof import('react-router').useLocation
   const useMemo: typeof import('react').useMemo
   const useNavigate: typeof import('react-router').useNavigate

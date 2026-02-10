@@ -1,5 +1,3 @@
-import { useState, useCallback, useMemo, useEffect } from 'react'
-
 interface UseLazyLoadOptions<T> {
   items: T[]
   initialCount?: number
