@@ -1,7 +1,7 @@
 import { useState, memo } from 'react'
 import type { CSSProperty } from '@/data/cssProperties'
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
-import SyntaxHighlight from '@/components/SyntaxHighlight'
+import { useIntersectionObserver } from '@/hooks/use-intersection-observer'
+import SyntaxHighlight from '@/components/syntax-highlight'
 import { Skeleton } from '@/components/skeleton'
 import { Code2, Layers, BookOpen, Copy, Check } from 'lucide-react'
 

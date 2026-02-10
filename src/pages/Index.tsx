@@ -1,11 +1,11 @@
 import { useState, useMemo } from 'react'
-import Header from '@/components/Header'
-import SearchBar from '@/components/SearchBar'
-import CategoryFilter from '@/components/CategoryFilter'
-import LazyPropertyCard from '@/components/LazyPropertyCard'
-import LoadMoreButton from '@/components/LoadMoreButton'
+import Header from '@/components/header'
+import SearchBar from '@/components/search-bar'
+import CategoryFilter from '@/components/category-filter'
+import LazyPropertyCard from '@/components/lazy-property-card'
+import LoadMoreButton from '@/components/load-more-button'
 import { cssProperties, type Category, type CSSProperty } from '@/data/cssProperties'
-import { useLazyLoad } from '@/hooks/useLazyLoad'
+import { useLazyLoad } from '@/hooks/use-lazy-load'
 import { BookOpen, Sparkles } from 'lucide-react'
 
 const Index = () => {
