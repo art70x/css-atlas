@@ -2,12 +2,12 @@ import { Skeleton } from 'components/skeleton'
 import SyntaxHighlight from 'components/syntax-highlight'
 import { Code2, Layers, BookOpen, Copy, Check } from 'lucide-react'
 
-interface LazyPropertyCardProps {
+interface LazyPropertyCardProperties {
   property: CSSProperty
   index: number
 }
 
-const LazyPropertyCard = memo(({ property, index }: LazyPropertyCardProps) => {
+const LazyPropertyCard = memo(({ property, index }: LazyPropertyCardProperties) => {
   const { elementRef, isVisible } = useIntersectionObserver({
     threshold: 0.05,
     rootMargin: '150px',
@@ -71,9 +71,9 @@ const LazyPropertyCard = memo(({ property, index }: LazyPropertyCardProps) => {
                   <span>Values</span>
                 </div>
                 <div className="flex flex-wrap gap-1.5">
-                  {property.values.map((value: string, i: number) => (
+                  {property.values.map((value: string, index_: number) => (
                     <span
-                      key={i}
+                      key={index_}
                       className="inline-flex cursor-default items-center rounded-sm border border-border/30 bg-muted px-2 py-0.5 font-mono text-sm text-value transition-all duration-100 hover:scale-105 hover:border-primary/50"
                     >
                       {value}
@@ -90,9 +90,9 @@ const LazyPropertyCard = memo(({ property, index }: LazyPropertyCardProps) => {
                   Units
                 </div>
                 <div className="flex flex-wrap gap-1.5">
-                  {property.units.map((unit: string, i: number) => (
+                  {property.units.map((unit: string, index_: number) => (
                     <span
-                      key={i}
+                      key={index_}
                       className="inline-flex cursor-default items-center rounded-sm border border-border/30 bg-muted px-2 py-0.5 font-mono text-sm text-unit transition-all hover:scale-105 hover:border-accent/50"
                     >
                       {unit}

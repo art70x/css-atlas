@@ -1,6 +1,6 @@
 import { Search, X } from 'lucide-react'
 
-interface SearchBarProps {
+interface SearchBarProperties {
   value: string
   onChange: (value: string) => void
   placeholder?: string
@@ -10,7 +10,7 @@ const SearchBar = ({
   value,
   onChange,
   placeholder = 'Search CSS properties...',
-}: SearchBarProps) => {
+}: SearchBarProperties) => {
   return (
     <div className="group relative mx-auto w-full max-w-2xl">
       <div className="absolute inset-0 animate-glow-pulse rounded-xl bg-primary/10 opacity-50 blur-xl transition-opacity group-focus-within:opacity-80" />
@@ -22,7 +22,7 @@ const SearchBar = ({
         <input
           type="search"
           value={value}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={(event) => onChange(event.target.value)}
           placeholder={placeholder}
           className="w-full rounded-xl border border-border/50 bg-muted/50 px-5 py-4 pr-12 pl-14 text-lg backdrop-blur-sm transition-all duration-200 placeholder:text-muted-foreground focus:border-primary/50 focus:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.3)] focus:ring-2 focus:ring-primary/20 focus:outline-none"
           aria-label="Search CSS properties"

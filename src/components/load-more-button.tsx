@@ -1,12 +1,12 @@
 import { ChevronDown, Loader2 } from 'lucide-react'
 
-interface LoadMoreButtonProps {
+interface LoadMoreButtonProperties {
   onClick: () => void
   remainingCount: number
   isLoading: boolean
 }
 
-const LoadMoreButton = ({ onClick, remainingCount, isLoading }: LoadMoreButtonProps) => {
+const LoadMoreButton = ({ onClick, remainingCount, isLoading }: LoadMoreButtonProperties) => {
   return (
     <div className="flex justify-center py-8">
       <button

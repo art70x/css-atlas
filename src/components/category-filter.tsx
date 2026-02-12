@@ -1,9 +1,9 @@
-interface CategoryFilterProps {
+interface CategoryFilterProperties {
   selected: Category | 'all'
   onSelect: (category: Category | 'all') => void
 }
 
-const CategoryFilter = ({ selected, onSelect }: CategoryFilterProps) => {
+const CategoryFilter = ({ selected, onSelect }: CategoryFilterProperties) => {
   return (
     <div
       className="flex flex-wrap justify-center gap-2"

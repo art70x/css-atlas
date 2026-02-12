@@ -11,7 +11,7 @@ export const useIntersectionObserver = ({
 }: UseIntersectionObserverOptions = {}) => {
   const [isVisible, setIsVisible] = useState(false)
   const [hasAnimated, setHasAnimated] = useState(false)
-  const elementRef = useRef<HTMLDivElement>(null)
+  const elementReference = useRef<HTMLDivElement>(null)
 
   const callback = useCallback(
     (entries: IntersectionObserverEntry[]) => {
@@ -29,7 +29,7 @@ export const useIntersectionObserver = ({
   )
 
   useEffect(() => {
-    const element = elementRef.current
+    const element = elementReference.current
     if (!element || (freezeOnceVisible && hasAnimated)) return
 
     const observer = new IntersectionObserver(callback, {
@@ -42,5 +42,5 @@ export const useIntersectionObserver = ({
     return () => observer.disconnect()
   }, [callback, threshold, rootMargin, freezeOnceVisible, hasAnimated])
 
-  return { elementRef, isVisible: isVisible || hasAnimated }
+  return { elementRef: elementReference, isVisible: isVisible || hasAnimated }
 }

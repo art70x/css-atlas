@@ -30,7 +30,7 @@ export const useLazyLoad = <T>({
     if (!isLoading) return
 
     const id = setTimeout(() => {
-      setDisplayCount((prev) => Math.min(prev + incrementCount, items.length))
+      setDisplayCount((previous) => Math.min(previous + incrementCount, items.length))
       setIsLoading(false)
     }, delayMs)
 

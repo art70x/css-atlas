@@ -1,7 +1,7 @@
 import { createHighlighterCore } from 'shiki/core'
 import { createOnigurumaEngine } from 'shiki/engine/oniguruma'
 
-type Props = {
+type Properties = {
   code: string
 }
 
@@ -11,7 +11,7 @@ const highlighter = await createHighlighterCore({
   engine: createOnigurumaEngine(import('shiki/wasm')),
 })
 
-const SyntaxHighlight = ({ code }: Props) => {
+const SyntaxHighlight = ({ code }: Properties) => {
   const html = highlighter.codeToHtml(code, {
     lang: 'css',
     theme: 'ayu-dark',
