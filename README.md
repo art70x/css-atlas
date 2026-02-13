@@ -9,7 +9,7 @@ A modern, comprehensive reference tool for CSS properties and functions. Built w
 
 ## ✨ Features
 
-- **160+ CSS Properties & Functions** - Comprehensive coverage of modern CSS3
+- **180+ CSS Properties & Functions** - Comprehensive coverage of modern CSS3
 - **Smart Search** - Instant fuzzy search across all properties
 - **Category Filtering** - Quick access by Layout, Typography, Colors, Animation, and more
 - **Syntax Highlighting** - Beautiful code examples with proper formatting

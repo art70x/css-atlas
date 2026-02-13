@@ -1,5 +1,3 @@
-import { ChevronDown, Loader2 } from 'lucide-react'
-
 interface LoadMoreButtonProperties {
   onClick: () => void
   remainingCount: number
@@ -16,13 +14,13 @@ const LoadMoreButton = ({ onClick, remainingCount, isLoading }: LoadMoreButtonPr
       >
         {isLoading ? (
           <>
-            <Loader2 className="size-4 animate-spin" />
+            <ILucideLoader2 className="size-4 animate-spin" />
             <span>Loading...</span>
           </>
         ) : (
           <>
             <span>Load {Math.min(remainingCount, 12)} more</span>
-            <ChevronDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+            <ILucideChevronDown className="size-4 transition-transform group-hover:translate-y-0.5" />
           </>
         )}
       </button>

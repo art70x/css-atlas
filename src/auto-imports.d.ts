@@ -8,8 +8,31 @@ export {}
 declare global {
   const Activity: typeof import('react').Activity
   const Fragment: typeof import('react').Fragment
+  const IHugeiconsBookOpen01: typeof import('~icons/hugeicons/book-open01.jsx').default
+  const IHugeiconsCancel01: typeof import('~icons/hugeicons/cancel01.jsx').default
+  const IHugeiconsCancel02: typeof import('~icons/hugeicons/cancel02.jsx').default
+  const IHugeiconsCheckmarkCircle03: typeof import('~icons/hugeicons/checkmark-circle03.jsx').default
+  const IHugeiconsCompass: typeof import('~icons/hugeicons/compass.jsx').default
+  const IHugeiconsCopy01: typeof import('~icons/hugeicons/copy01.jsx').default
+  const IHugeiconsGlobe02: typeof import('~icons/hugeicons/globe02.jsx').default
+  const IHugeiconsLayer: typeof import('~icons/hugeicons/layer.jsx').default
+  const IHugeiconsLayer02: typeof import('~icons/hugeicons/layer02.jsx').default
+  const IHugeiconsLayers: typeof import('~icons/hugeicons/layers.jsx').default
+  const IHugeiconsLayers01: typeof import('~icons/hugeicons/layers01.jsx').default
+  const IHugeiconsLoading03: typeof import('~icons/hugeicons/loading03.jsx').default
+  const IHugeiconsMoon02: typeof import('~icons/hugeicons/moon02.jsx').default
+  const IHugeiconsSearch0: typeof import('~icons/hugeicons/search0.jsx').default
+  const IHugeiconsSearch01: typeof import('~icons/hugeicons/search01.jsx').default
+  const IHugeiconsSearch02: typeof import('~icons/hugeicons/search02.jsx').default
+  const IHugeiconsSparkles: typeof import('~icons/hugeicons/sparkles.jsx').default
+  const IHugeiconsSun02: typeof import('~icons/hugeicons/sun02.jsx').default
+  const ILucideBookOpen: typeof import('~icons/lucide/book-open.jsx').default
+  const ILucideChevronDown: typeof import('~icons/lucide/chevron-down.jsx').default
+  const ILucideCode2: typeof import('~icons/lucide/code2.jsx').default
   const ILucideCompass: typeof import('~icons/lucide/compass.jsx').default
+  const ILucideLoader2: typeof import('~icons/lucide/loader2.jsx').default
   const Suspense: typeof import('react').Suspense
+  const ThemeProviderContext: typeof import('./hooks/use-theme').ThemeProviderContext
   const cache: typeof import('react').cache
   const cacheSignal: typeof import('react').cacheSignal
   const categories: typeof import('./data/css-properties').categories
@@ -20,6 +43,7 @@ declare global {
   const lazy: typeof import('react').lazy
   const memo: typeof import('react').memo
   const startTransition: typeof import('react').startTransition
+  const toggleTheme: typeof import('./hooks/use-theme').toggleTheme
   const use: typeof import('react').use
   const useActionState: typeof import('react').useActionState
   const useCallback: typeof import('react').useCallback
@@ -28,6 +52,8 @@ declare global {
   const useDeferredValue: typeof import('react').useDeferredValue
   const useEffect: typeof import('react').useEffect
   const useEffectEvent: typeof import('react').useEffectEvent
+  const useHead: typeof import('@unhead/react').useHead
+  const useHeadSafe: typeof import('@unhead/react').useHeadSafe
   const useHref: typeof import('react-router').useHref
   const useId: typeof import('react').useId
   const useImperativeHandle: typeof import('react').useImperativeHandle
@@ -48,12 +74,19 @@ declare global {
   const useRef: typeof import('react').useRef
   const useResolvedPath: typeof import('react-router').useResolvedPath
   const useRoutes: typeof import('react-router').useRoutes
+  const useSeo: typeof import('./hooks/use-seo').useSeo
+  const useSeoMeta: typeof import('@unhead/react').useSeoMeta
   const useState: typeof import('react').useState
   const useSyncExternalStore: typeof import('react').useSyncExternalStore
+  const useTheme: typeof import('./hooks/use-theme').useTheme
   const useTransition: typeof import('react').useTransition
+  const useUnhead: typeof import('@unhead/react').useUnhead
 }
 // for type re-export
 declare global {
+  // @ts-ignore
+  export type { Theme, ThemeProviderState } from './hooks/use-theme'
+  import('./hooks/use-theme')
   // @ts-ignore
   export type { CSSProperty, Category } from './data/css-properties'
   import('./data/css-properties')

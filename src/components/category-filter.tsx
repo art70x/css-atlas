@@ -17,7 +17,7 @@ const CategoryFilter = ({ selected, onSelect }: CategoryFilterProperties) => {
         className={`transform rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 active:scale-95 ${
           selected === 'all'
             ? 'scale-105 bg-primary text-primary-foreground shadow-lg shadow-primary/25'
-            : 'bg-secondary/50 text-secondary-foreground hover:scale-102 hover:bg-secondary'
+            : 'bg-secondary/80 text-secondary-foreground hover:scale-102 hover:bg-secondary'
         }`}
       >
         All

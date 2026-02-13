@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import { fileURLToPath, URL } from 'node:url'
 import react from '@vitejs/plugin-react'
 import AutoImport from 'unplugin-auto-import/vite'
+import { hookImports } from '@unhead/react'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import { fontless } from 'fontless'
@@ -17,7 +18,7 @@ export default defineConfig({
     react(),
     AutoImport({
       include: [/\.[tj]sx?$/],
-      imports: ['react', 'react-router'],
+      imports: ['react', 'react-router', hookImports],
       dirs: ['src/hooks', 'src/data'],
       viteOptimizeDeps: true,
       resolvers: [
