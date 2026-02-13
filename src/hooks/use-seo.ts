@@ -67,7 +67,7 @@ export function useSeo({ meta, icons, image, robots }: UseSeoOptions) {
       ...(meta?.url ? [{ rel: 'canonical', href: meta.url }] : []),
 
       ...(icons?.favicon
-        ? [{ rel: 'shortcut icon', type: 'image/x-icon', href: icons.favicon }]
+        ? [{ rel: 'shortcut icon', type: 'image/png', href: icons.favicon, sizes: '48x48' }]
         : []),
 
       ...(icons?.icon ? [{ rel: 'icon', type: 'image/svg+xml', href: icons.icon }] : []),

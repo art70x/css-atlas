@@ -7,7 +7,7 @@ import { Analytics } from '@vercel/analytics/react'
 export default function App() {
   useSeo({
     meta: { author: 'art70x' },
-    icons: { favicon: '/favicon.ico', icon: '/icon.svg', appleTouchIcon: '/apple-touch-icon.png' },
+    icons: { favicon: '/favicon.png', icon: '/icon.svg', appleTouchIcon: '/apple-touch-icon.png' },
     robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   })
 
