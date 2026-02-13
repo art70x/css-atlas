@@ -12,18 +12,17 @@
     "lint": "eslint . --cache --cache-location .eslintcache",
     "lint:fix": "eslint . --fix --cache --cache-location .eslintcache",
     "format": "prettier --write --experimental-cli src/",
-    "predev": "nr lint:fix && nr format && cls"
+    "predev": "nr lint:fix && nr format && clear"
   },
   "dependencies": {
-    "@shikijs/langs": "^3.22.0",
-    "@shikijs/themes": "^3.22.0",
     "@unhead/react": "3.0.0-beta.6",
     "@vercel/analytics": "^1.6.1",
+    "@wooorm/starry-night": "^3.9.0",
+    "hast-util-to-html": "^9.0.5",
     "lucide-react": "^0.563.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-router": "^7.13.0",
-    "shiki": "^3.22.0",
     "tailwindcss": "latest"
   },
   "devDependencies": {

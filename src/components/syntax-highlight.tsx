@@ -1,23 +1,38 @@
-import { createHighlighterCore } from 'shiki/core'
-import { createOnigurumaEngine } from 'shiki/engine/oniguruma'
+import sourceCss from '@wooorm/starry-night/source.css'
+import { createStarryNight } from '@wooorm/starry-night'
+import { toHtml } from 'hast-util-to-html'
+import '@wooorm/starry-night/style/both'
 
 type Properties = {
   code: string
 }
 
-const highlighter = await createHighlighterCore({
-  themes: [import('@shikijs/themes/ayu-dark')],
-  langs: [import('@shikijs/langs/css')],
-  engine: createOnigurumaEngine(import('shiki/wasm')),
-})
+let starryNightPromise: ReturnType<typeof createStarryNight> | undefined
 
-const SyntaxHighlight = ({ code }: Properties) => {
-  const html = highlighter.codeToHtml(code, {
-    lang: 'css',
-    theme: 'ayu-dark',
-  })
-
-  return <div dangerouslySetInnerHTML={{ __html: html }} />
+function getStarryNight() {
+  if (!starryNightPromise) {
+    starryNightPromise = createStarryNight([sourceCss])
+  }
+  return starryNightPromise
 }
 
-export default SyntaxHighlight
+export default function SyntaxHighlight({ code }: Properties) {
+  const [html, setHtml] = useState<string>('')
+
+  useEffect(() => {
+    async function highlightCode() {
+      const starryNight = await getStarryNight()
+      const tree = starryNight.highlight(code, 'source.css')
+      setHtml(toHtml(tree))
+    }
+
+    highlightCode()
+  }, [code])
+
+  return (
+    <pre
+      className="rounded-md bg-foreground/4 p-2 text-base"
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  )
+}
